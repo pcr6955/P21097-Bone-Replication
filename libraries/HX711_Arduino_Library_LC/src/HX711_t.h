@@ -36,7 +36,7 @@ class HX711
 		// - With a gain factor of 64 or 128, channel A is selected
 		// - With a gain factor of 32, channel B is selected
 		// The library default is "128" (Channel A).
-		void begin(byte dout, byte pd_sck, byte gain = 0);
+		void begin(byte dout, byte pd_sck, byte gain = 128);
 
 		// Check if HX711 is ready
 		// from the datasheet: When output data is not ready for retrieval, digital output pin DOUT is high. Serial clock
@@ -51,7 +51,7 @@ class HX711
 		// set the gain factor; takes effect only after a call to read()
 		// channel A can be set for a 128 or 64 gain; channel B has a fixed 32 gain
 		// depending on the parameter, the channel is also set to either A or B
-		void set_gain(byte gain = 0);
+		void set_gain(byte gain = 128);
 
 		// waits for the chip to be ready and returns a reading
 		long read();
